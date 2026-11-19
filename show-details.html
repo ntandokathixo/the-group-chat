@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore reality show details, user scores, seasons and similar shows."
+    />
+    <title>Show Details | The Group Chat</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="navigation-container">
+        <a class="site-logo" href="index.html">THE GROUP CHAT</a>
+
+        <nav class="desktop-navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="discover.html">Discover</a>
+          <a href="my-list.html">My List</a>
+          <a href="about.html">About</a>
+        </nav>
+
+        <span class="profile-mark" aria-hidden="true"><span></span></span>
+
+        <button
+          class="mobile-menu-button"
+          id="mobile-menu-button"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-navigation"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <nav
+        class="mobile-navigation"
+        id="mobile-navigation"
+        aria-label="Mobile navigation"
+        hidden
+      >
+        <a href="index.html">Home</a>
+        <a href="discover.html">Discover</a>
+        <a href="my-list.html">My List</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="show-details-page" id="main-content">
+      <div class="show-details-topbar">
+        <a class="back-link" href="discover.html">← Back to Discover</a>
+      </div>
+
+      <section
+        class="show-details-loading"
+        id="show-details-loading"
+        aria-label="Loading show details"
+      >
+        <p class="visually-hidden" role="status">Loading show details…</p>
+
+        <div class="details-loading-poster" aria-hidden="true"></div>
+
+        <div class="details-loading-information" aria-hidden="true">
+          <div class="details-loading-line loading-title-line"></div>
+          <div class="details-loading-line loading-short-line"></div>
+          <div class="details-loading-line"></div>
+          <div class="details-loading-line loading-medium-line"></div>
+        </div>
+      </section>
+
+      <section class="show-details-error" id="show-details-error" hidden>
+        <p id="show-error-message" role="status"></p>
+        <div class="show-details-error-buttons">
+          <button id="retry-show-details" type="button">Try again</button>
+          <a href="discover.html">Return to Discover</a>
+        </div>
+      </section>
+
+      <div id="show-details-content" hidden>
+        <section class="show-details-hero" aria-labelledby="show-title">
+          <div class="show-details-poster-area">
+            <div class="show-poster-frame">
+              <div id="show-poster-container"></div>
+              <span class="poster-tape" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <div class="show-details-information">
+            <p class="show-details-handwritten">for the love of reality TV</p>
+            <h1 id="show-title"></h1>
+            <p class="show-tagline" id="show-tagline" hidden></p>
+            <div class="show-genres" id="show-genres" aria-label="Show genres"></div>
+
+            <div class="show-score-row">
+              <div class="show-score">
+                <span id="show-score-number"></span>
+                <span>User score</span>
+              </div>
+              <p class="show-year" id="show-year"></p>
+            </div>
+
+            <button
+              class="save-show-details-button"
+              id="save-show-button"
+              type="button"
+              aria-pressed="false"
+            >
+              Save Show
+            </button>
+            <p class="visually-hidden" id="save-show-status" role="status"></p>
+          </div>
+        </section>
+
+        <section class="show-overview-section" aria-labelledby="overview-heading">
+          <h2 id="overview-heading">Overview</h2>
+          <p id="show-overview"></p>
+        </section>
+
+        <section class="seasons-section" aria-labelledby="seasons-heading">
+          <div class="seasons-heading-row">
+            <div><h2 id="seasons-heading">Seasons and Episodes</h2></div>
+
+            <div class="season-selector" id="season-selector">
+              <label for="season-select">Choose season</label>
+              <select id="season-select"></select>
+            </div>
+          </div>
+
+          <div class="episodes-loading" id="episodes-loading" hidden>
+            <p role="status">Loading episodes…</p>
+          </div>
+
+          <div class="episodes-list" id="episodes-list" hidden></div>
+
+          <div class="episodes-empty" id="episodes-empty" hidden>
+            <p id="episodes-message" role="status"></p>
+            <button class="retry-button" id="retry-episodes" type="button" hidden>
+              Try again
+            </button>
+          </div>
+        </section>
+
+        <section class="similar-shows-section" aria-labelledby="similar-shows-heading">
+          <div class="similar-shows-heading-row">
+            <h2 id="similar-shows-heading">Similar Shows</h2>
+            <a href="discover.html">Discover more →</a>
+          </div>
+
+          <div class="similar-shows-carousel" id="similar-shows-carousel" hidden>
+            <div class="similar-shows-grid" id="similar-shows-grid"></div>
+          </div>
+
+          <div class="similar-carousel-controls" id="similar-controls" hidden>
+            <button id="similar-previous" type="button" aria-label="View previous similar shows">
+              ←
+            </button>
+            <p id="similar-controls-note">Drag or use the arrows</p>
+            <button id="similar-next" type="button" aria-label="View more similar shows">
+              →
+            </button>
+          </div>
+
+          <div class="similar-shows-empty" id="similar-shows-empty">
+            <p id="similar-status" role="status">Loading similar shows…</p>
+            <button class="retry-button" id="retry-similar" type="button" hidden>
+              Try again
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer"><p>THE GROUP CHAT</p></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/show-details.js"></script>
+  </body>
+</html>

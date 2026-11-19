@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Find a reality show to match your mood and join the conversation."
+    />
+    <title>The Group Chat | Reality TV Discovery</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="index.html">THE GROUP CHAT</a>
+
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a class="active" href="index.html" aria-current="page">Home</a>
+          <a href="discover.html">Discover</a>
+          <a href="my-list.html">My List</a>
+          <a href="about.html">About</a>
+        </nav>
+
+        <span class="profile-mark" aria-hidden="true"><span></span></span>
+
+        <button
+          class="menu-button"
+          id="menu-button"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-navigation"
+        >
+          ☰
+        </button>
+
+        <nav
+          class="mobile-nav"
+          id="mobile-navigation"
+          aria-label="Mobile navigation"
+          hidden
+        >
+          <a class="active" href="index.html" aria-current="page">Home</a>
+          <a href="discover.html">Discover</a>
+          <a href="my-list.html">My List</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="mood-hero" aria-labelledby="mood-heading">
+        <div class="mood-inner">
+          <span class="mood-doodle doodle-left" aria-hidden="true">
+            same brain<br />
+            different shows<br />
+            xx <img class="doodle-heart" src="assets/images/Hand Drawn Heart.png" alt="" />
+          </span>
+
+          <span class="mood-doodle doodle-right" aria-hidden="true">
+            reality TV<br />
+            hits different<br />
+            with friends <img class="doodle-heart" src="assets/images/Hand Drawn Heart.png" alt="" />
+          </span>
+
+          <div class="mood-decoration" aria-hidden="true">✦</div>
+
+          <div class="mood-heading">
+            <h1 id="mood-heading">What are you<br />in the mood for?</h1>
+            <p class="hero-description">
+              Tell us how you're feeling and we'll find the reality show
+              energy to match.
+            </p>
+          </div>
+
+          <fieldset class="desktop-moods">
+            <legend class="visually-hidden">Choose your mood</legend>
+            <div class="mood-chip-list">
+              <button class="mood-chip" type="button" data-mood="dramatic" aria-pressed="false">
+                Messy Drama
+              </button>
+              <button class="mood-chip" type="button" data-mood="romantic" aria-pressed="false">
+                Romantic
+              </button>
+              <button class="mood-chip" type="button" data-mood="funny" aria-pressed="false">
+                Funny
+              </button>
+              <button class="mood-chip" type="button" data-mood="chaotic" aria-pressed="false">
+                Demotivated
+              </button>
+              <button class="mood-chip" type="button" data-mood="competitive" aria-pressed="false">
+                Fabulous
+              </button>
+            </div>
+          </fieldset>
+
+          <div class="mobile-mood">
+            <label for="mood-select">Choose your mood</label>
+            <select id="mood-select">
+              <option value="">Select a mood</option>
+              <option value="dramatic">Messy Drama</option>
+              <option value="romantic">Romantic</option>
+              <option value="funny">Funny</option>
+              <option value="chaotic">Demotivated</option>
+              <option value="competitive">Fabulous</option>
+            </select>
+          </div>
+
+          <p class="mood-feedback" id="mood-feedback" role="status"></p>
+
+          <div class="mood-results" id="mood-results" aria-labelledby="results-heading" hidden>
+            <div class="mood-results-heading">
+              <h2 id="results-heading">For your mood</h2>
+              <a href="discover.html">See more →</a>
+            </div>
+            <div class="show-grid mood-show-grid" id="mood-results-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-section reveal-section" aria-labelledby="featured-title">
+        <div class="featured-copy">
+          <p class="handwritten-label featured-label">
+          <img class="featured-star" src="assets/images/NicePng_hand-drawn-arrow-png_208524.png" alt="" />
+           Featured Show
+           </p>
+          <h2 id="featured-title">The<br />Real Housewives<br />of Atlanta</h2>
+          <p>
+            A glamorous group of Atlanta women navigate changing friendships,
+            successful careers and personal challenges, with plenty of luxury
+            and unforgettable drama along the way.
+          </p>
+
+          <div class="button-row">
+            <a class="small-button" href="discover.html?search=The+Real+Housewives+of+Atlanta">
+              View show
+            </a>
+            <button class="small-button save-featured" type="button" aria-pressed="false">
+              Save show
+            </button>
+          </div>
+        </div>
+
+        <a
+          class="featured-image"
+          href="discover.html?search=The+Real+Housewives+of+Atlanta"
+          aria-label="View The Real Housewives of Atlanta"
+        >
+          <span>Loading featured poster…</span>
+        </a>
+      </section>
+
+      <section class="content-section reveal-section" aria-labelledby="trending-heading">
+        <div class="simple-heading">
+          <h2 id="trending-heading">Trending Right Now</h2>
+        </div>
+        <p class="visually-hidden" id="trending-status" role="status"></p>
+        <div class="show-grid trending-grid"></div>
+      </section>
+
+      <section class="content-section category-section reveal-section" aria-labelledby="category-heading">
+        <div class="simple-heading">
+          <h2 id="category-heading">Browse by Category</h2>
+          <span aria-hidden="true">✦</span>
+        </div>
+
+        <div class="category-grid">
+  <a class="category-card category-drama" href="discover.html?genre=18">
+    <span>Drama</span>
+  </a>
+
+  <a class="category-card category-romance" href="discover.html?category=romance">
+    <span>Romance</span>
+  </a>
+
+  <a class="category-card category-luxury" href="discover.html?category=luxury">
+    <span>Luxury</span>
+  </a>
+
+  <a class="category-card category-food" href="discover.html?category=food">
+    <span>Food</span>
+  </a>
+
+  <a class="category-card category-competition" href="discover.html?category=competition">
+    <span>Competition</span>
+  </a>
+</div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><a href="index.html">THE GROUP CHAT</a></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
